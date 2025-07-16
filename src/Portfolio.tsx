@@ -357,27 +357,27 @@ const Portfolio = () => {
       id: 1,
       title: "AutoMud",
       category: "Enterprise PWA",
-      description: "Sistema gestionale completo per aziende con dashboard real-time, gestione richieste avanzata e integrazione cloud. Supporta oltre 10k utenti con 99.9% uptime.",
-      tech: ["React", "Express.js", "PostgreSQL", "Azure", "Docker"],
-      highlights: ["10k+ Users", "99.9% Uptime", "Real-time Dashboard"],
+      description: "AutoMud è una Progressive Web App (PWA) sviluppata per semplificare la gestione delle richieste di valutazione e vendita veicoli da parte di commerciali e backoffice. Il sistema consente di monitorare in tempo reale lo stato delle richieste, visualizzare le immagini dei veicoli, gestire lo storico delle offerte e tracciare i motivi di rifiuto. Il backend fornisce un’API REST sicura e veloce, mentre l’interfaccia utente è ottimizzata per desktop e mobile, con una UI moderna e reattiva.",
+      tech: ["React", "Vite", "TypeScript", "Tailwind CSS", "ShadCN UI", "Express.js", "PostgreSQL", "Azure Blob Storage", "Docker"],
+      highlights: ["PWA ottimizzata per mobile e desktop", "Interfaccia moderna e responsive", "Gestione avanzata richieste veicoli", "Storico offerte e motivi di rifiuto", "Galleria immagini integrata", "API REST backend sicura", "Database PostgreSQL e storage Azure", "Architettura scalabile e modulare"],
       gradient: "from-blue-600 via-purple-600 to-pink-600"
     },
     {
       id: 2,
-      title: "Industrial Saw Simulator",
+      title: "Simulatore di Segatrice Industriale",
       category: "IoT Simulation",
-      description: "Simulatore avanzato di macchinari industriali con gemello digitale, telemetria real-time e integrazione SCADA per ottimizzazione produzione.",
-      tech: ["Python", "MQTT", "InfluxDB", "Grafana", "Industrial Protocols"],
-      highlights: ["Real-time Telemetry", "SCADA Integration", "Digital Twin"],
+      description: "Ho sviluppato un simulatore realistico per una segatrice a nastro industriale, in grado di generare dati sensati (temperatura, velocità, allarmi, consumo, ecc.) e comunicarli in tempo reale tramite MQTT, REST API o WebSocket. Il software include una dashboard interattiva per il monitoraggio live e il controllo manuale della macchina, con un'architettura modulare orientata alla scalabilità e all’integrazione in sistemi edge/IoT.",
+      tech: ["Python", "MQTT", "PyQt", "Grafana", "REST API", "Web Socket", "Queue"],
+      highlights: ["Generazione di telemetria in tempo reale", "Simulazione sensori industriali", "Comunicazione tramite protocollo MQTT", "API REST per monitoraggio stato", "Interfaccia grafica interattiva per il controllo manuale", "Sistema di allarmi (surriscaldamento, sovraccarico)", "Output dati in formato JSON strutturato", "Codice modulare e ben documentato"],
       gradient: "from-green-600 via-teal-600 to-blue-600"
     },
     {
       id: 3,
-      title: "Traffic AI Optimization",
+      title: "Simulazione Traffico Stradale – Ottimizzazione Incrocio a 4 Strade",
       category: "Smart City AI",
-      description: "Sistema di ottimizzazione traffico urbano con ML avanzato. Riduce incidenti del 35% e tempi di attesa del 20% attraverso analisi predittiva.",
-      tech: ["Python", "TensorFlow", "SUMO", "Docker", "Computer Vision"],
-      highlights: ["35% ↓ Accidents", "20% ↓ Wait Time", "94% ML Accuracy"],
+      description: "Simulazione sviluppata con SUMO e Python per analizzare il comportamento del traffico in un incrocio urbano complesso con 16 corsie totali. L’obiettivo è ridurre gli incidenti ottimizzando i cicli semaforici in base ai flussi veicolari durante una giornata completa (inclusi i picchi tra le 7:00 e le 13:00). I dati raccolti vengono salvati in un database NoSQL e visualizzati con Grafana per l’analisi. Il progetto è containerizzato con Docker, includendo anche SUMO-GUI, TraCI e Nginx, per facilitarne la distribuzione senza installazioni manuali.",
+      tech: ["Python", "SUMO", "TraCI", "MongoDB", "Grafana", "Docker", "Nginx"],
+      highlights: ["Simulazione traffico urbana con SUMO", "Ottimizzazione semafori in incrocio a 4 direzioni", "Analisi su 24 ore con gestione picchi", "Controllo veicoli tramite TraCI (Python)", "Esportazione dati su MongoDB", "Dashboard analitica con Grafana", "Ambiente containerizzato con Docker", "Interfaccia SUMO-GUI inclusa via Docker"],
       gradient: "from-purple-600 via-pink-600 to-red-600"
     },
     {
