@@ -432,7 +432,7 @@ const Portfolio = () => {
       </div>
 
       {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-3 bg-gray-800 z-50 backdrop-blur-sm border-b border-gray-700">
+      <div className="fixed top-0 left-0 w-full h-1 sm:h-2 bg-gray-800 z-50 backdrop-blur-sm border-b border-gray-700">
         <div 
           className="h-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 transition-all duration-200 ease-out shadow-lg shadow-purple-500/50"
           style={{ 
@@ -643,26 +643,26 @@ const Portfolio = () => {
         </nav>
 
         {/* Hero Section */}
-        <section id="hero" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
+        <section id="hero" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-16">
           <div className={`max-w-6xl mx-auto text-center transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-green-500/20 mb-8">
+            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 backdrop-blur-sm border border-green-500/20 mb-6 sm:mb-8">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-sm text-green-400 font-medium">Available for new opportunities</span>
+              <span className="text-xs sm:text-sm text-green-400 font-medium">Available for new opportunities</span>
             </div>
 
             {/* Main Title */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
               <span className={`block bg-gradient-to-r ${currentTheme.gradientText} bg-clip-text text-transparent`}>
                 SOUFIAN
               </span>
-              <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mt-4 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mt-2 sm:mt-4 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
                 Developer
               </span>
             </h1>
 
             {/* Description */}
-            <p className={`text-lg sm:text-xl md:text-2xl ${currentTheme.secondaryText} mb-12 max-w-4xl mx-auto leading-relaxed`}>
+            <p className={`text-base sm:text-lg md:text-xl ${currentTheme.secondaryText} mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0`}>
               Trasformo idee innovative in{' '}
               <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent font-semibold">
                 soluzioni digitali straordinarie
@@ -672,11 +672,11 @@ const Portfolio = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-16 px-4 sm:px-0">
               <Button 
                 onClick={() => scrollToSection('projects')}
                 size="lg"
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-purple-500/25"
+                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-purple-500/25 w-full sm:w-auto"
               >
                 Esplora i Progetti
                 <ArrowDown className="w-5 h-5 ml-2 animate-bounce" />
@@ -685,7 +685,7 @@ const Portfolio = () => {
                 variant="outline" 
                 size="lg"
                 onClick={handleDownloadCV}
-                className="border-gray-600 hover:border-white hover:bg-white/10 text-white px-8 py-4 text-lg rounded-full transition-all duration-300 group"
+                className="border-gray-600 hover:border-white hover:bg-white/10 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full transition-all duration-300 group w-full sm:w-auto"
               >
                 <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                 Scarica CV
@@ -693,17 +693,17 @@ const Portfolio = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto px-4 sm:px-0">
               {[
                 { number: '4+', label: 'Anni Esperienza' },
                 { number: '15+', label: 'Progetti Completati' },
                 { number: '99%', label: 'Soddisfazione Cliente' }
               ].map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                     {stat.number}
                   </div>
-                  <div className={`text-sm ${currentTheme.secondaryText} mt-1`}>{stat.label}</div>
+                  <div className={`text-xs sm:text-sm ${currentTheme.secondaryText} mt-1`}>{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -711,22 +711,22 @@ const Portfolio = () => {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
+        <section id="skills" className="py-10 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div 
-              className={`text-center mb-16 transition-all duration-1000 ${visibleElements.has('skills-header') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}
+              className={`text-center mb-8 sm:mb-12 lg:mb-16 transition-all duration-1000 ${visibleElements.has('skills-header') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}
               data-animate
               id="skills-header"
             >
-              <h2 className={`text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r ${currentTheme.gradientText} bg-clip-text text-transparent`}>
+              <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r ${currentTheme.gradientText} bg-clip-text text-transparent`}>
                 Stack Tecnologico
               </h2>
-              <p className={`text-xl ${currentTheme.secondaryText} max-w-2xl mx-auto`}>
+              <p className={`text-base sm:text-lg lg:text-xl ${currentTheme.secondaryText} max-w-2xl mx-auto`}>
                 Competenze trasversali per soluzioni complete e innovative
               </p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {skillCategories.map((category, index) => (
                 <Card 
                   key={index} 
@@ -739,18 +739,18 @@ const Portfolio = () => {
                   data-animate
                   id={`skill-${index}`}
                 >
-                  <CardContent className="p-6 relative overflow-hidden">
+                  <CardContent className="p-4 sm:p-6 relative overflow-hidden">
                     {/* Enhanced hover gradient overlay */}
                     <div className={`absolute -inset-1 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-8 transition-opacity duration-500 rounded-xl`} />
                     <div className={`absolute -inset-1 bg-gradient-to-t ${category.color} opacity-0 group-hover:opacity-6 transition-opacity duration-700 rounded-xl`} />
                     <div className={`absolute -inset-1 bg-gradient-to-r ${category.color} opacity-0 group-hover:opacity-4 transition-opacity duration-500 delay-100 rounded-xl`} />
                     
                     <div className="relative z-10 bg-transparent">
-                      <div className="flex items-center gap-3 mb-4 group-hover:scale-105 transition-transform duration-300">
-                        <div className={`p-3 rounded-xl bg-gradient-to-r ${category.color} text-white group-hover:rotate-12 transition-transform duration-300`}>
+                      <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4 group-hover:scale-105 transition-transform duration-300">
+                        <div className={`p-2 sm:p-3 rounded-xl bg-gradient-to-r ${category.color} text-white group-hover:rotate-12 transition-transform duration-300`}>
                           {category.icon}
                         </div>
-                        <h3 className={`text-xl font-semibold ${currentTheme.text} group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 transition-all duration-300`}>
+                        <h3 className={`text-lg sm:text-xl font-semibold ${currentTheme.text} group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 transition-all duration-300`}>
                           {category.title}
                         </h3>
                       </div>
@@ -762,7 +762,7 @@ const Portfolio = () => {
                             style={{ transitionDelay: `${skillIndex * 50}ms` }}
                           >
                             <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${category.color} group-hover:scale-125 transition-transform duration-300`} />
-                            <span className={`text-sm transition-colors duration-300 ${
+                            <span className={`text-xs sm:text-sm transition-colors duration-300 ${
                               theme === 'dark' 
                                 ? 'text-gray-300 group-hover:text-white' 
                                 : 'text-gray-600 group-hover:text-gray-900'
@@ -781,22 +781,22 @@ const Portfolio = () => {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
+        <section id="projects" className="py-10 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div 
-              className={`text-center mb-16 transition-all duration-1000 ${visibleElements.has('projects-header') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}
+              className={`text-center mb-8 sm:mb-12 lg:mb-16 transition-all duration-1000 ${visibleElements.has('projects-header') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}
               data-animate
               id="projects-header"
             >
-              <h2 className={`text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r ${currentTheme.gradientText} bg-clip-text text-transparent`}>
+              <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r ${currentTheme.gradientText} bg-clip-text text-transparent`}>
                 Progetti in Evidenza
               </h2>
-              <p className={`text-xl ${currentTheme.secondaryText} max-w-2xl mx-auto`}>
+              <p className={`text-base sm:text-lg lg:text-xl ${currentTheme.secondaryText} max-w-2xl mx-auto`}>
                 Soluzioni innovative che fanno la differenza nel mondo reale
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
               {projects.map((project, index) => (
                 <Card 
                   key={project.id} 
@@ -818,7 +818,7 @@ const Portfolio = () => {
                     {/* Project Header with enhanced gradient */}
                     <div className={`h-3 bg-gradient-to-r ${project.gradient} group-hover:h-4 transition-all duration-300`} />
                     
-                    <div className="p-6 relative z-10">
+                    <div className="p-4 sm:p-6 relative z-10">
                       {/* Category with micro-animation */}
                       <Badge 
                         variant="outline" 
@@ -828,12 +828,12 @@ const Portfolio = () => {
                       </Badge>
                       
                       {/* Title with enhanced hover effect */}
-                      <h3 className="text-2xl font-bold mb-3 group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500 group-hover:scale-105 transform-gpu">
+                      <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500 group-hover:scale-105 transform-gpu">
                         {project.title}
                       </h3>
                       
                       {/* Description */}
-                      <p className={`leading-relaxed mb-6 transition-colors duration-300 ${
+                      <p className={`text-sm sm:text-base leading-relaxed mb-4 sm:mb-6 transition-colors duration-300 ${
                         theme === 'dark' 
                           ? 'text-gray-300 group-hover:text-white' 
                           : 'text-gray-600 group-hover:text-gray-900'
@@ -842,7 +842,7 @@ const Portfolio = () => {
                       </p>
                       
                       {/* Highlights with staggered animation */}
-                      <div className="flex flex-wrap gap-2 mb-6">
+                      <div className="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-6">
                         {project.highlights.map((highlight, idx) => (
                           <div 
                             key={idx} 
@@ -850,13 +850,13 @@ const Portfolio = () => {
                             style={{ transitionDelay: `${idx * 100}ms` }}
                           >
                             <div className="w-1.5 h-1.5 bg-green-500 rounded-full group-hover:animate-pulse" />
-                            <span className="text-green-400 text-xs font-medium group-hover:text-green-300 transition-colors duration-300">{highlight}</span>
+                            <span className="text-green-400 text-xs sm:text-xs font-medium group-hover:text-green-300 transition-colors duration-300">{highlight}</span>
                           </div>
                         ))}
                       </div>
                       
                       {/* Technologies with enhanced hover */}
-                      <div className="flex flex-wrap gap-2 mb-6">
+                      <div className="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-6">
                         {project.tech.map((tech, techIndex) => (
                           <Badge 
                             key={techIndex} 
@@ -874,7 +874,7 @@ const Portfolio = () => {
                       </div>
                       
                       {/* Actions with enhanced animations */}
-                      <div className="flex gap-3 group-hover:translate-y-0 translate-y-1 transition-transform duration-300">
+                      <div className="flex gap-2 sm:gap-3 group-hover:translate-y-0 translate-y-1 transition-transform duration-300">
                         <Button 
                           variant="outline" 
                           size="sm"
@@ -906,17 +906,17 @@ const Portfolio = () => {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
+        <section id="contact" className="py-10 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div 
-              className={`text-center mb-16 transition-all duration-1000 ${visibleElements.has('contact-content') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}
+              className={`text-center mb-8 sm:mb-12 lg:mb-16 transition-all duration-1000 ${visibleElements.has('contact-content') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}
               data-animate
               id="contact-content"
             >
-              <h2 className={`text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r ${currentTheme.gradientText} bg-clip-text text-transparent`}>
+              <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r ${currentTheme.gradientText} bg-clip-text text-transparent`}>
                 Iniziamo a Collaborare
               </h2>
-              <p className={`text-xl ${currentTheme.secondaryText} mb-12 leading-relaxed`}>
+              <p className={`text-base sm:text-lg lg:text-xl ${currentTheme.secondaryText} mb-8 sm:mb-12 leading-relaxed`}>
                 Hai un progetto in mente? Trasformiamo le tue idee in{' '}
                 <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent font-semibold">
                   realtà straordinarie
@@ -924,15 +924,15 @@ const Portfolio = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
               {/* Contact Form */}
               <div 
                 className={`transition-all duration-1000 delay-200 ${visibleElements.has('contact-content') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}
               >
                 <Card className={`bg-gradient-to-br ${currentTheme.cardBg} ${currentTheme.border} backdrop-blur-sm`}>
-                  <CardContent className="p-8">
-                    <h3 className={`text-2xl font-bold mb-6 ${currentTheme.text}`}>Invia un Messaggio</h3>
-                    <form onSubmit={handleContactSubmit} className="space-y-6">
+                  <CardContent className="p-4 sm:p-6 lg:p-8">
+                    <h3 className={`text-xl sm:text-2xl font-bold mb-4 sm:mb-6 ${currentTheme.text}`}>Invia un Messaggio</h3>
+                    <form onSubmit={handleContactSubmit} className="space-y-4 sm:space-y-6">
                       <div>
                         <label className={`block text-sm font-medium ${currentTheme.secondaryText} mb-2`}>Nome</label>
                         <input
@@ -1010,26 +1010,26 @@ const Portfolio = () => {
                         <div className="p-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg">
                           <Mail className="w-5 h-5 text-white" />
                         </div>
-                        <div>
-                          <p className={`text-sm ${currentTheme.secondaryText}`}>Email</p>
-                          <p className={`${currentTheme.text}`}>soufianmarkouni3@gmail.com</p>
+                        <div className="min-w-0">
+                          <p className={`text-xs sm:text-sm ${currentTheme.secondaryText}`}>Email</p>
+                          <p className={`text-sm sm:text-base ${currentTheme.text} truncate`}>soufianmarkouni3@gmail.com</p>
                         </div>
                       </div>
                       <div className={`flex items-center gap-4 p-4 bg-gray-800/30 rounded-lg backdrop-blur-sm border ${currentTheme.border} hover:border-gray-600/50 transition-all duration-300`}>
                         <div className="p-3 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg">
                           <div className="w-5 h-5 text-white flex items-center justify-center text-sm">📍</div>
                         </div>
-                        <div>
-                          <p className={`text-sm ${currentTheme.secondaryText}`}>Posizione</p>
-                          <p className={`${currentTheme.text}`}>Veneto, Italia</p>
+                        <div className="min-w-0">
+                          <p className={`text-xs sm:text-sm ${currentTheme.secondaryText}`}>Posizione</p>
+                          <p className={`text-sm sm:text-base ${currentTheme.text}`}>Veneto, Italia</p>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   <div>
-                    <h4 className={`text-lg font-semibold mb-4 ${currentTheme.text}`}>Seguimi sui Social</h4>
-                    <div className="flex gap-4">
+                    <h4 className={`text-base sm:text-lg font-semibold mb-3 sm:mb-4 ${currentTheme.text}`}>Seguimi sui Social</h4>
+                    <div className="flex gap-2 sm:gap-4">
                       <Button 
                         variant="outline" 
                         size="lg" 
@@ -1055,9 +1055,9 @@ const Portfolio = () => {
                     </div>
                   </div>
 
-                  <div className={`p-6 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg border border-purple-500/20`}>
-                    <h4 className={`text-lg font-semibold mb-2 ${currentTheme.text}`}>Tempi di Risposta</h4>
-                    <p className={`${currentTheme.secondaryText} text-sm`}>
+                  <div className={`p-4 sm:p-6 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg border border-purple-500/20`}>
+                    <h4 className={`text-base sm:text-lg font-semibold mb-2 ${currentTheme.text}`}>Tempi di Risposta</h4>
+                    <p className={`${currentTheme.secondaryText} text-xs sm:text-sm`}>
                       Rispondo generalmente entro 24 ore. Per progetti urgenti, 
                       contattami direttamente via email.
                     </p>
@@ -1069,12 +1069,12 @@ const Portfolio = () => {
         </section>
 
         {/* Footer */}
-        <footer className={`py-12 px-8 border-t ${currentTheme.border} backdrop-blur-sm`}>
-          <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center">
-            <div className={`${currentTheme.secondaryText} mb-4 sm:mb-0`}>
+        <footer className={`py-8 sm:py-12 px-4 sm:px-8 border-t ${currentTheme.border} backdrop-blur-sm`}>
+          <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
+            <div className={`${currentTheme.secondaryText} text-xs sm:text-sm text-center sm:text-left`}>
               © 2025 Made By Soufian
             </div>
-            <div className={`${currentTheme.secondaryText} text-sm`}>
+            <div className={`${currentTheme.secondaryText} text-xs sm:text-sm text-center sm:text-left`}>
               Made with React • TypeScript • Tailwind • shadcn/ui
             </div>
           </div>
