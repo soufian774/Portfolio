@@ -64,9 +64,4 @@
     Content-Type = "text/plain"
 
 # Forms configuration
-[[plugins]]
-  package = "netlify-plugin-sitemap"
-  [plugins.inputs]
-    baseUrl = "https://soufian.space"
-    pretty = true
-    trailingSlash = false
+# Plugin sitemap automatico - non necessario con sitemap.xml già presente
