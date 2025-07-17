@@ -335,7 +335,7 @@ const Portfolio = () => {
       title: "Frontend",
       icon: <Code className="w-8 h-8" />,
       color: "from-blue-500 to-cyan-500",
-      skills: ["React", "TypeScript", "Vue.js", "Tailwind CSS", "Vite"]
+      skills: ["React", "TypeScript", "Tailwind CSS", "Vite"]
     },
     {
       title: "Backend",
@@ -359,7 +359,7 @@ const Portfolio = () => {
       title: "AI/ML",
       icon: <Brain className="w-8 h-8" />,
       color: "from-indigo-500 to-purple-500",
-      skills: ["Python", "TensorFlow", "Computer Vision", "Data Analysis"]
+      skills: ["Python", "Pandas", "NumPy", "Data Analysis"]
     },
     {
       title: "Mobile",
@@ -593,10 +593,20 @@ const Portfolio = () => {
                 >
                   <Github className="w-4 h-4" />
                 </Button>
-                <Button variant="ghost" size="sm" className={`${currentTheme.secondaryText} hover:${currentTheme.text}`}>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className={`${currentTheme.secondaryText} hover:${currentTheme.text}`}
+                  onClick={() => window.open('https://www.linkedin.com/in/soufian-markouni-a66a98366/', '_blank')}
+                >
                   <Linkedin className="w-4 h-4" />
                 </Button>
-                <Button variant="ghost" size="sm" className={`${currentTheme.secondaryText} hover:${currentTheme.text}`}>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className={`${currentTheme.secondaryText} hover:${currentTheme.text}`}
+                  onClick={() => window.open('mailto:soufianmarkouni3@gmail.com', '_blank')}
+                >
                   <Mail className="w-4 h-4" />
                 </Button>
               </div>
@@ -647,10 +657,20 @@ const Portfolio = () => {
                   >
                     <Github className="w-4 h-4" />
                   </Button>
-                  <Button variant="ghost" size="sm" className={`${currentTheme.secondaryText} hover:${currentTheme.text}`}>
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className={`${currentTheme.secondaryText} hover:${currentTheme.text}`}
+                    onClick={() => window.open('https://www.linkedin.com/in/soufian-markouni-a66a98366/', '_blank')}
+                  >
                     <Linkedin className="w-4 h-4" />
                   </Button>
-                  <Button variant="ghost" size="sm" className={`${currentTheme.secondaryText} hover:${currentTheme.text}`}>
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className={`${currentTheme.secondaryText} hover:${currentTheme.text}`}
+                    onClick={() => window.open('mailto:soufianmarkouni3@gmail.com', '_blank')}
+                  >
                     <Mail className="w-4 h-4" />
                   </Button>
                 </div>
@@ -689,7 +709,7 @@ const Portfolio = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-16 px-4 sm:px-0">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-6 sm:mb-8 px-4 sm:px-0">
               <Button 
                 onClick={() => scrollToSection('projects')}
                 size="lg"
@@ -712,7 +732,7 @@ const Portfolio = () => {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="py-10 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+        <section id="skills" className="py-6 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div 
               className={`text-center mb-8 sm:mb-12 lg:mb-16 transition-all duration-1000 ${visibleElements.has('skills-header') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}
@@ -1040,6 +1060,7 @@ const Portfolio = () => {
                         variant="outline" 
                         size="lg" 
                         className="border-gray-700 hover:border-blue-500 hover:bg-blue-500/10 rounded-full p-4 group transition-all duration-300 hover:scale-110"
+                        onClick={() => window.open('https://www.linkedin.com/in/soufian-markouni-a66a98366/', '_blank')}
                       >
                         <Linkedin className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
                       </Button>
@@ -1047,6 +1068,7 @@ const Portfolio = () => {
                         variant="outline" 
                         size="lg" 
                         className="border-gray-700 hover:border-green-500 hover:bg-green-500/10 rounded-full p-4 group transition-all duration-300 hover:scale-110"
+                        onClick={() => window.open('mailto:soufianmarkouni3@gmail.com', '_blank')}
                       >
                         <Mail className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
                       </Button>
