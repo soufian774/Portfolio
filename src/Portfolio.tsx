@@ -915,8 +915,8 @@ const Portfolio = () => {
                     <form 
                       name="contact" 
                       method="POST" 
-                      data-netlify="true"
-                      data-netlify-honeypot="bot-field"
+                      {...({ netlify: true } as any)}
+                      {...({ 'netlify-honeypot': 'bot-field' } as any)}
                       onSubmit={handleContactSubmit} 
                       className="space-y-4 sm:space-y-6"
                     >
