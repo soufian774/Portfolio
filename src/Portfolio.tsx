@@ -210,11 +210,28 @@ const Portfolio = () => {
     e.preventDefault();
     setFormStatus('sending');
     
-    setTimeout(() => {
-      setFormStatus('success');
-      setContactForm({ name: '', email: '', message: '' });
-      setTimeout(() => setFormStatus('idle'), 3000);
-    }, 2000);
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString(),
+      });
+      
+      if (response.ok) {
+        setFormStatus('success');
+        setContactForm({ name: '', email: '', message: '' });
+        setTimeout(() => setFormStatus('idle'), 5000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setFormStatus('error');
+      setTimeout(() => setFormStatus('idle'), 5000);
+    }
   };
 
   const handleDownloadCV = () => {
@@ -384,9 +401,9 @@ const Portfolio = () => {
       id: 4,
       title: "ESP32 MQTT Bridge",
       category: "Embedded IoT",
-      description: "Gateway IoT industriale con protocolli Modbus, captive portal WiFi, OTA updates e resilienza offline. Certificato per ambienti critici.",
-      tech: ["C/C++", "ESP-IDF", "Modbus RTU", "MQTT", "FreeRTOS"],
-      highlights: ["Industrial Grade", "OTA Updates", "99.8% Reliability"],
+      description: "Ho sviluppato un sistema IoT industriale completo per la comunicazione con centraline MODBUS utilizzando ESP32-C6 come nodo edge intelligente. Il sistema include un firmware avanzato con gestione Wi-Fi, MQTT, Modbus RTU, configurazione tramite captive portal e salvataggio persistente. La comunicazione è orchestrata tramite MQTT e Kafka, con servizi backend in Python per parsing XML, generazione configurazioni e invio comandi.",
+      tech: ["ESP32-C6", "C (ESP-IDF)", "MODBUS RTU", "MQTT", "Kafka", "Python", "Docker", "JSON", "XML"],
+      highlights: ["Protocolli Industriali Affidabili", "Telemetria in Tempo Reale", "Orchestrazione con MQTT e Kafka", "Configurazione tramite Captive Portal", "Memorizzazione Persistente e Recupero", "Comandi Remoti MODBUS Scrittura", "Trasferimento Configurazioni a Blocchi", "Infrastruttura Containerizzata", "Gestione Errori e Ritentativi Automatici", "Monitoraggio Dispositivi in Tempo Reale"],
       gradient: "from-orange-600 via-red-600 to-pink-600"
     }
   ];
@@ -648,7 +665,7 @@ const Portfolio = () => {
             {/* Status Badge */}
             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 backdrop-blur-sm border border-green-500/20 mb-6 sm:mb-8">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-xs sm:text-sm text-green-400 font-medium">Available for new opportunities</span>
+              <span className="text-xs sm:text-sm text-green-400 font-medium">Disponibile per nuove opportunità</span>
             </div>
 
             {/* Main Title */}
@@ -690,22 +707,6 @@ const Portfolio = () => {
                 <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                 Scarica CV
               </Button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto px-4 sm:px-0">
-              {[
-                { number: '4+', label: 'Anni Esperienza' },
-                { number: '15+', label: 'Progetti Completati' },
-                { number: '99%', label: 'Soddisfazione Cliente' }
-              ].map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                    {stat.number}
-                  </div>
-                  <div className={`text-xs sm:text-sm ${currentTheme.secondaryText} mt-1`}>{stat.label}</div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
@@ -800,7 +801,7 @@ const Portfolio = () => {
               {projects.map((project, index) => (
                 <Card 
                   key={project.id} 
-                  className={`group bg-gradient-to-br ${currentTheme.cardBg} ${currentTheme.border} hover:border-gray-600/50 transition-all duration-700 hover:scale-[1.03] cursor-pointer backdrop-blur-sm overflow-hidden hover:shadow-2xl hover:shadow-purple-500/20 ${
+                  className={`group bg-gradient-to-br ${currentTheme.cardBg} ${currentTheme.border} hover:border-gray-600/50 transition-all duration-700 hover:scale-[1.03] cursor-pointer backdrop-blur-sm overflow-hidden hover:shadow-2xl hover:shadow-purple-500/20 h-full ${
                     visibleElements.has(`project-${index}`) 
                       ? 'translate-y-0 opacity-100' 
                       : 'translate-y-30 opacity-0'
@@ -809,20 +810,20 @@ const Portfolio = () => {
                   data-animate
                   id={`project-${index}`}
                 >
-                  <CardContent className="p-0 relative overflow-hidden">
+                  <CardContent className="p-0 relative overflow-hidden h-full flex flex-col">
                     {/* Multi-layer animated background gradient on hover */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-all duration-700`} />
-                    <div className={`absolute inset-0 bg-gradient-to-t ${project.gradient} opacity-0 group-hover:opacity-5 transition-all duration-700 delay-100`} />
-                    <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-3 transition-all duration-700 delay-200`} />
+                    <div className={`absolute -inset-px bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-all duration-700`} />
+                    <div className={`absolute -inset-px bg-gradient-to-t ${project.gradient} opacity-0 group-hover:opacity-5 transition-all duration-700 delay-100`} />
+                    <div className={`absolute -inset-px bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-3 transition-all duration-700 delay-200`} />
                     
                     {/* Project Header with enhanced gradient */}
                     <div className={`h-3 bg-gradient-to-r ${project.gradient} group-hover:h-4 transition-all duration-300`} />
                     
-                    <div className="p-4 sm:p-6 relative z-10">
+                    <div className="p-4 sm:p-6 relative z-10 flex flex-col h-full">
                       {/* Category with micro-animation */}
                       <Badge 
                         variant="outline" 
-                        className="mb-4 border-purple-500/50 text-purple-400 bg-purple-500/10 group-hover:border-purple-400 group-hover:bg-purple-500/20 group-hover:scale-105 transition-all duration-300"
+                        className="mb-4 border-purple-500/50 text-purple-400 bg-purple-500/10 group-hover:border-purple-400 group-hover:bg-purple-500/20 group-hover:scale-105 transition-all duration-300 w-fit"
                       >
                         {project.category}
                       </Badge>
@@ -856,7 +857,7 @@ const Portfolio = () => {
                       </div>
                       
                       {/* Technologies with enhanced hover */}
-                      <div className="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-6">
+                      <div className="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-6 flex-grow">
                         {project.tech.map((tech, techIndex) => (
                           <Badge 
                             key={techIndex} 
@@ -873,29 +874,8 @@ const Portfolio = () => {
                         ))}
                       </div>
                       
-                      {/* Actions with enhanced animations */}
-                      <div className="flex gap-2 sm:gap-3 group-hover:translate-y-0 translate-y-1 transition-transform duration-300">
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          className={`flex-1 ${currentTheme.border} hover:border-white hover:bg-white hover:text-black transition-all duration-300 group-hover:scale-105 transform-gpu`}
-                          onClick={() => window.open('https://github.com/soufian774', '_blank')}
-                        >
-                          <Github className="w-4 h-4 mr-2" />
-                          Codice
-                        </Button>
-                        <Button 
-                          variant="ghost" 
-                          size="sm"
-                          className={`flex-1 transition-all duration-300 transform-gpu group-hover:scale-105 hover:bg-white/5 ${
-                            theme === 'dark'
-                              ? 'text-gray-400 hover:text-white'
-                              : 'text-gray-600 hover:text-gray-900'
-                          }`}
-                        >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Demo
-                        </Button>
+                      {/* Actions with enhanced animations - Now at the bottom */}
+                      <div className="flex gap-2 sm:gap-3 group-hover:translate-y-0 translate-y-1 transition-transform duration-300 mt-auto">
                       </div>
                     </div>
                   </CardContent>
@@ -932,11 +912,27 @@ const Portfolio = () => {
                 <Card className={`bg-gradient-to-br ${currentTheme.cardBg} ${currentTheme.border} backdrop-blur-sm`}>
                   <CardContent className="p-4 sm:p-6 lg:p-8">
                     <h3 className={`text-xl sm:text-2xl font-bold mb-4 sm:mb-6 ${currentTheme.text}`}>Invia un Messaggio</h3>
-                    <form onSubmit={handleContactSubmit} className="space-y-4 sm:space-y-6">
+                    <form 
+                      name="contact" 
+                      method="POST" 
+                      data-netlify="true"
+                      data-netlify-honeypot="bot-field"
+                      onSubmit={handleContactSubmit} 
+                      className="space-y-4 sm:space-y-6"
+                    >
+                      {/* Honeypot field for spam protection */}
+                      <input type="hidden" name="form-name" value="contact" />
+                      <div style={{ display: 'none' }}>
+                        <label>
+                          Don't fill this out: <input name="bot-field" />
+                        </label>
+                      </div>
+                      
                       <div>
                         <label className={`block text-sm font-medium ${currentTheme.secondaryText} mb-2`}>Nome</label>
                         <input
                           type="text"
+                          name="name"
                           required
                           value={contactForm.name}
                           onChange={(e) => setContactForm({...contactForm, name: e.target.value})}
@@ -948,6 +944,7 @@ const Portfolio = () => {
                         <label className={`block text-sm font-medium ${currentTheme.secondaryText} mb-2`}>Email</label>
                         <input
                           type="email"
+                          name="email"
                           required
                           value={contactForm.email}
                           onChange={(e) => setContactForm({...contactForm, email: e.target.value})}
@@ -958,6 +955,7 @@ const Portfolio = () => {
                       <div>
                         <label className={`block text-sm font-medium ${currentTheme.secondaryText} mb-2`}>Messaggio</label>
                         <textarea
+                          name="message"
                           required
                           rows={4}
                           value={contactForm.message}
