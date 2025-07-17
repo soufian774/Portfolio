@@ -1,14 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Soufian Markouni - Full Stack Developer & IoT Specialist</title>
-    <meta name="description" content="Portfolio di Soufian Markouni, Full Stack Developer specializzato in React, TypeScript, Node.js, sistemi embedded IoT e soluzioni AI/ML. Sviluppo applicazioni web moderne e innovative." />
-    <meta name="keywords" content="Soufian Markouni, Full Stack Developer, React, TypeScript, Node.js, IoT, ESP32, Python, Portfolio, Web Development" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Soufian Markouni - Sviluppatore IoT Freelance & Full Stack Developer</title>
+    <meta name="description" content="Portfolio di Soufian Markouni, sviluppatore IoT freelance specializzato in ESP32, MQTT, Modbus. Progetti full stack React, TypeScript, Node.js, sistemi embedded e soluzioni AI/ML." />
+    <meta name="keywords" content="sviluppatore IoT freelance, progetti ESP32 MQTT Modbus, portfolio sviluppatore full stack React Express, Soufian Markouni, sviluppo embedded, TypeScript, Node.js, Python, Arduino, AutoMud PWA" />
     <meta name="author" content="Soufian Markouni" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="language" content="it" />
+    <meta name="geo.region" content="IT-34" />
+    <meta name="geo.placename" content="Veneto, Italia" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://soufian.space/" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Soufian Markouni - Sviluppatore IoT Freelance & Full Stack Developer" />
+    <meta property="og:description" content="Portfolio di Soufian Markouni, sviluppatore IoT freelance specializzato in ESP32, MQTT, Modbus. Progetti full stack React, TypeScript, Node.js, sistemi embedded e soluzioni AI/ML." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://soufian.space/" />
+    <meta property="og:site_name" content="Soufian Markouni Portfolio" />
+    <meta property="og:locale" content="it_IT" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Soufian Markouni - Sviluppatore IoT Freelance & Full Stack Developer" />
+    <meta name="twitter:description" content="Portfolio di Soufian Markouni, sviluppatore IoT freelance specializzato in ESP32, MQTT, Modbus. Progetti full stack React, TypeScript, Node.js, sistemi embedded e soluzioni AI/ML." />
+    
+    <!-- Technical SEO -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <meta name="theme-color" content="#8b5cf6" />
+    <meta name="msapplication-TileColor" content="#8b5cf6" />
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Soufian Markouni",
+      "jobTitle": "Sviluppatore IoT Freelance e Full Stack Developer",
+      "description": "Sviluppatore IoT freelance specializzato in ESP32, MQTT, Modbus e progetti full stack React, TypeScript, Node.js",
+      "url": "https://soufian.space",
+      "sameAs": [
+        "https://github.com/soufian774",
+        "https://www.linkedin.com/in/soufian-markouni-a66a98366/"
+      ],
+      "email": "soufianmarkouni3@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Veneto",
+        "addressCountry": "IT"
+      },
+      "knowsAbout": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "ESP32",
+        "IoT",
+        "MQTT",
+        "Modbus",
+        "Python",
+        "Arduino",
+        "Full Stack Development",
+        "Embedded Systems",
+        "AI/ML"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Full Stack Developer"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "IoT Specialist"
+        }
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      }
+    }
+    </script>
+    
+    <!-- Works/Portfolio Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Portfolio Progetti Soufian Markouni",
+      "description": "Progetti di sviluppo software, IoT, embedded e web development",
+      "itemListElement": [
+        {
+          "@type": "SoftwareApplication",
+          "position": 1,
+          "name": "AutoMud PWA",
+          "description": "Progressive Web App per gestione richieste valutazione e vendita veicoli",
+          "applicationCategory": "Enterprise PWA",
+          "programmingLanguage": ["React", "TypeScript", "Node.js", "PostgreSQL"],
+          "operatingSystem": "Web Browser",
+          "author": {
+            "@type": "Person",
+            "name": "Soufian Markouni"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 2,
+          "name": "Simulatore Segatrice Industriale",
+          "description": "Simulatore IoT per segatrice industriale con comunicazione MQTT e telemetria real-time",
+          "applicationCategory": "IoT Simulation",
+          "programmingLanguage": ["Python", "MQTT", "PyQt"],
+          "author": {
+            "@type": "Person",
+            "name": "Soufian Markouni"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 3,
+          "name": "ESP32 MQTT Bridge",
+          "description": "Sistema IoT per comunicazione MODBUS con ESP32 e gestione MQTT",
+          "applicationCategory": "Embedded IoT",
+          "programmingLanguage": ["C", "ESP-IDF", "MQTT", "Modbus"],
+          "author": {
+            "@type": "Person",
+            "name": "Soufian Markouni"
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

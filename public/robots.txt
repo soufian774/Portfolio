@@ -1,3 +1,20 @@
+# Robots.txt per soufian.space - Portfolio Soufian Markouni
+# Permetti completo accesso ai bot di ricerca
+
 User-agent: *
 Allow: /
+
+# Sitemap per facilitare l'indicizzazione
 Sitemap: https://soufian.space/sitemap.xml
+
+# Accelera l'indicizzazione specificando crawl-delay
+Crawl-delay: 1
+
+# Permetti esplicitamente l'accesso ai file CSS e JS
+Allow: /assets/
+Allow: /*.css$
+Allow: /*.js$
+
+# Evita l'indicizzazione di file temporanei o di sviluppo
+Disallow: /tmp/
+Disallow: /*.log$

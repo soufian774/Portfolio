@@ -82,14 +82,7 @@ const Portfolio = () => {
         progress = Math.min(Math.max((currentScrollY / scrollableHeight) * 100, 0), 100);
       }
       
-      // Debug logging - Remove in production if needed
-      console.log('Scroll Debug:', {
-        currentScrollY,
-        documentHeight,
-        windowHeight,
-        scrollableHeight,
-        progress
-      });
+      // Debug logging - Removed for production SEO optimization
       
       setScrollProgress(progress);
       
@@ -228,7 +221,7 @@ const Portfolio = () => {
         throw new Error('Form submission failed');
       }
     } catch (error) {
-      console.error('Error:', error);
+      // Handle form submission error
       setFormStatus('error');
       setTimeout(() => setFormStatus('idle'), 5000);
     }
@@ -250,7 +243,7 @@ const Portfolio = () => {
   };
 
   const scrollToTop = () => {
-    console.log('Scroll to top clicked!'); // Debug log
+    // Scroll to top functionality
     
     // Get current scroll position
     const startPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
@@ -276,22 +269,18 @@ const Portfolio = () => {
           // If we've reached the top or it's been working for a while, clear interval
           if (currentPosition === 0 || checkCount > 20) {
             clearInterval(checkInterval);
-            if (currentPosition === 0) {
-              console.log('Native smooth scroll completed successfully');
-            }
             return;
           }
           
           // If scroll position hasn't changed after a very short time, use custom animation
           if (checkCount > 3 && currentPosition === startPosition) {
             clearInterval(checkInterval);
-            console.log('Native smooth scroll failed, using custom animation');
             customSmoothScroll();
           }
         }, 16); // 16ms = ~60fps for smoother checking
         
       } catch (error) {
-        console.log('Native smooth scroll not supported, using custom animation');
+        // Fallback to custom animation if native smooth scroll fails
         customSmoothScroll();
       }
     };
@@ -318,8 +307,6 @@ const Portfolio = () => {
         
         if (progress < 1) {
           requestAnimationFrame(animateScroll);
-        } else {
-          console.log('Custom smooth scroll animation completed');
         }
       };
       
